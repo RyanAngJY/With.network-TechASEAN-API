@@ -1,20 +1,24 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
 
 require("dotenv").config();
 
 const port = process.env.PORT || 8000;
 const bodyParser = require("body-parser");
+const nodeEnv = process.env.NODE_ENV || "dev";
 
-var whitelist = ["http://localhost:3000"];
-const corsOptions = {
-    origin: whitelist,
-    methods: ["GET"],
-    credentials: true,
-    allowedHeaders: ["Authorization", "Content-Type"],
-};
-app.use(cors(corsOptions));
+if (nodeEnv === "dev") {
+    console.log("Running in dev mode");
+    const cors = require("cors");
+    var whitelist = ["http://localhost:3000"];
+    const corsOptions = {
+        origin: whitelist,
+        methods: ["GET"],
+        credentials: true,
+        allowedHeaders: ["Authorization", "Content-Type"],
+    };
+    app.use(cors(corsOptions));
+}
 
 var entityRoutes = require("./routes/entities");
 
