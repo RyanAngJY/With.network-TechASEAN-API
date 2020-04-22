@@ -5,20 +5,18 @@ require("dotenv").config();
 
 const port = process.env.PORT || 8000;
 const bodyParser = require("body-parser");
-const nodeEnv = process.env.NODE_ENV || "dev";
+const nodeEnv = process.env.NODE_ENV || "development";
 
-if (nodeEnv === "dev") {
-    console.log("Running in dev mode");
-    const cors = require("cors");
-    var whitelist = ["http://localhost:3000"];
-    const corsOptions = {
-        origin: whitelist,
-        methods: ["GET"],
-        credentials: true,
-        allowedHeaders: ["Authorization", "Content-Type"],
-    };
-    app.use(cors(corsOptions));
-}
+console.log("Running in dev mode");
+const cors = require("cors");
+var whitelist = ["http://localhost:3000", "http://www.techasean.io"];
+const corsOptions = {
+    origin: whitelist,
+    methods: ["GET"],
+    credentials: true,
+    allowedHeaders: ["Authorization", "Content-Type"],
+};
+app.use(cors(corsOptions));
 
 var entityRoutes = require("./routes/entities");
 
