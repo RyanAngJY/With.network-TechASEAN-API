@@ -15,6 +15,8 @@ eb deploy
 
 ### To re-deploy on Elastic Beanstalk
 
+Git commit the code.
+
 Run:
 
 ```

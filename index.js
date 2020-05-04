@@ -9,7 +9,11 @@ const nodeEnv = process.env.NODE_ENV || "development";
 
 console.log("Running in dev mode");
 const cors = require("cors");
-var whitelist = ["http://localhost:3000", "http://www.techasean.io"];
+var whitelist = [
+    "http://localhost:3000",
+    "http://techasean.io",
+    "http://www.techasean.io",
+];
 const corsOptions = {
     origin: whitelist,
     methods: ["GET"],
