@@ -1,21 +1,8 @@
-# Complete RESTful Todos API
+# APEIRO Connector
 
-### To start a new application on Elastic Beanstalk
+### To Deploy on Elastic Beanstalk
 
-```
-eb init
-eb create
-```
-
--   Set environment variables of the created environment on the AWS console.
-
-```
-eb deploy
-```
-
-### To re-deploy on Elastic Beanstalk
-
-Git commit the code.
+Git commit the code to master branch.
 
 Run:
 
