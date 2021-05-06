@@ -53,6 +53,12 @@ exports.getEntitiesWithRole = (req, res) => {
 
 exports.getEntitiesWithRoleCount = (req, res) => {
     console.log("Get entity count");
+    
+    res.header('Access-Control-Allow-Origin', "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com");
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    
     const roleId = req.query.roleId;
 
     con.query(
