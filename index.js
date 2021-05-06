@@ -15,13 +15,14 @@ var whitelist = [
     "http://www.techasean.io",
     "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com"
 ];
-const corsOptions = {
-    origin: whitelist,
-    methods: ["GET"],
-    credentials: true,
-    allowedHeaders: ["Authorization", "Content-Type"],
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin: whitelist,
+//     methods: ["GET"],
+//     credentials: true,
+//     allowedHeaders: ["Authorization", "Content-Type"],
+// };
+// app.use(cors(corsOptions));
+app.use(cors());
 
 var entityRoutes = require("./routes/entities");
 
