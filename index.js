@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const nodeEnv = process.env.NODE_ENV || "development";
 
 console.log("Running in dev mode");
-const cors = require("cors");
+// const cors = require("cors");
 // var whitelist = [
 //     "http://localhost:3000",
 //     "http://techasean.io",
@@ -22,7 +22,7 @@ const cors = require("cors");
 //     allowedHeaders: ["Authorization", "Content-Type"],
 // };
 // app.use(cors(corsOptions));
-app.use(cors());
+// app.use(cors());
 
 var entityRoutes = require("./routes/entities");
 
