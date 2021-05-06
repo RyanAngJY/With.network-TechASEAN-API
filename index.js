@@ -13,6 +13,7 @@ var whitelist = [
     "http://localhost:3000",
     "http://techasean.io",
     "http://www.techasean.io",
+    "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com/"
 ];
 const corsOptions = {
     origin: whitelist,
