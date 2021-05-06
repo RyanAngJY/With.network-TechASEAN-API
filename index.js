@@ -9,12 +9,12 @@ const nodeEnv = process.env.NODE_ENV || "development";
 
 console.log("Running in dev mode");
 const cors = require("cors");
-var whitelist = [
-    "http://localhost:3000",
-    "http://techasean.io",
-    "http://www.techasean.io",
-    "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com"
-];
+// var whitelist = [
+//     "http://localhost:3000",
+//     "http://techasean.io",
+//     "http://www.techasean.io",
+//     "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com"
+// ];
 // const corsOptions = {
 //     origin: whitelist,
 //     methods: ["GET"],
@@ -28,6 +28,13 @@ var entityRoutes = require("./routes/entities");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
 
 app.get("/", function (req, res) {
     res.send("Test route");

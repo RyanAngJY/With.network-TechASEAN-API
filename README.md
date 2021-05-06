@@ -8,7 +8,7 @@ npm start
 
 ### To Deploy on Elastic Beanstalk
 
-Git commit the code to master branch.
+Git commit the code to master branch and push.
 
 Run:
 
