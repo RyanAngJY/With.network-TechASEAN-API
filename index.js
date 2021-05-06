@@ -30,14 +30,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', "http://tech-asean-prod.eba-ysd5mnpy.ap-southeast-1.elasticbeanstalk.com");
     res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
 app.get("/", function (req, res) {
-    res.send("Test route");
+    res.send("Test lala");
 });
 
 app.use("/api/entities", entityRoutes);
