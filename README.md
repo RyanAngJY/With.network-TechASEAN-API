@@ -14,10 +14,14 @@ npm start
 
 ### To Deploy on Elastic Beanstalk
 
+Login to AWS CLI:
+```
+aws configure
+```
+
 Git commit the code to master branch and push.
 
-Run:
-
+Deploy:
 ```
 eb deploy
 ```
